@@ -1,0 +1,40 @@
+{
+  "name": "timetask-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for Intervals' time tracking (timetask.com)",
+  "main": "timetask.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rzumstein/timetask-cli.git"
+  },
+  "keywords": [
+    "timetask",
+    "time",
+    "task",
+    "intervals",
+    "cli"
+  ],
+  "author": "Ryan Zumstein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rzumstein/timetask-cli/issues"
+  },
+  "homepage": "https://github.com/rzumstein/timetask-cli#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "inquirer": "^9.0.2",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0"
+  }
+}
