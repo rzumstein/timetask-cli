@@ -26,11 +26,27 @@ async function add () {
 
 async function view () {
   const timeEntries = await api.getTime()
-  const chartData = timeEntries.map(timeEntry => ({
-    key: timeEntry.date,
-    value: timeEntry.time,
-    style: bg('red')
+  console.log('timeEntries', timeEntries)
+  const timeByDate = {}
+  timeEntries.forEach(timeEntry => {
+    if (timeByDate[timeEntry.date]) {
+      timeByDate[timeEntry.date] += Number(timeEntry.time)
+    } else {
+      timeByDate[timeEntry.date] = Number(timeEntry.time)
+    }
+  })
+  console.log('timeByDate', timeByDate)
+  console.log('timeByDate entries', Object.entries(timeByDate))
+  const chartData = Object.entries(timeByDate).map(tbd => ({
+    key: tbd[0],
+    value: tbd[1],
+    style: bg('green')
   }))
+  // const chartData = timeEntries.map(timeEntry => ({
+  //   key: timeEntry.date,
+  //   value: timeEntry.time,
+  //   style: bg('red')
+  // }))
   console.log(bar(chartData))
 }
 
